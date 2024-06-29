@@ -1,11 +1,7 @@
-<?php include('header.php'); ?>
+
 <?php
-    if(!isset($_SESSION['user'])){
-        echo "<script>location.href='login.php'; </script>";
-    }
-    
+    include('../config/koneksi.php');
     $data=mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE username = '".$_SESSION['user']."'"));
-    
 ?>
 <main class="container-fluid">
     <div class="row justify-content-center">
@@ -28,7 +24,6 @@
                 <hr>
                 <button class="btn oren w-100" name="btnedit" value="edit">Perbaharui</button>
             </form>
-                <a href="login.php"><button class="btn btn-danger w-100">Logout</button></a>
             </div>
         </div>
     </div>
